@@ -7,7 +7,7 @@ entity alu is
         clk_i:      in  std_logic;
         reset_i:    in  std_logic;
         op1_i:      in  std_logic_vector(11 downto 0);
-        op1_i:      in  std_logic_vector(11 downto 0);
+        op2_i:      in  std_logic_vector(11 downto 0);
         otype_i:    in  std_logic_vector(3  downto 0);
         start_i:    in  std_logic;
 
@@ -15,6 +15,6 @@ entity alu is
         result_o:   out std_logic_vector(15 downto 0);
         sign_0:     out std_logic;
         overflow_o: out std_logic;
-        error_o:    out std_logic;
+        error_o:    out std_logic
     );
 end alu;

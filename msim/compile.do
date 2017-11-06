@@ -1,8 +1,8 @@
-vcom ../vhdl/io_ctrl.vhd
-vcom ../vhdl/calc_ctrl.vhd
-vcom ../vhdl/alu.vhd
-vcom ../vhdl/calc_top.vhd
-vcom ../vhdl/calc_top_struc.vhd
+vcom ../vhdl/io_ctrl_.vhd
+vcom ../vhdl/calc_ctrl_.vhd
+vcom ../vhdl/alu_.vhd
+vcom ../vhdl/cal_top_.vhd
+vcom ../vhdl/cal_top_struc.vhd
 
 
 
