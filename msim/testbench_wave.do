@@ -1,6 +1,6 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -format Logic  -radix unsigned /testbench/*
+add wave -noupdate -format Logic  -radix unsigned /tb_io_ctrl/*
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}

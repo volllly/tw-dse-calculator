@@ -7,73 +7,72 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Paul/Desktop/Technikum/3. Semester/DKC/vectorgates/msim
+Z0 dC:/Users/Paul/Desktop/Technikum/3_Semester/DSE/calculator/msim
 Ealu
 w1507543525
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z4 dC:/Users/Paul/Desktop/Technikum/3_Semester/DSE/calculator/msim
+R0
 8../vhdl/alu_.vhd
 F../vhdl/alu_.vhd
 l0
 L5
 VlZJVaUmmKD@;L1A[>]MnQ1
 !s100 =4YWJNkf383ogIhJO<<oj2
-Z5 OV;C;10.5b;63
+Z4 OV;C;10.5b;63
 32
-Z6 !s110 1509957675
+Z5 !s110 1510070319
 !i10b 1
-Z7 !s108 1509957675.000000
+Z6 !s108 1510070319.000000
 !s90 -reportprogress|300|../vhdl/alu_.vhd|
 !s107 ../vhdl/alu_.vhd|
 !i113 1
-Z8 tExplicit 1 CvgOpt 0
+Z7 tExplicit 1 CvgOpt 0
 Ecalc_ctrl
 w1507543508
 R1
 R2
 R3
-R4
+R0
 8../vhdl/calc_ctrl_.vhd
 F../vhdl/calc_ctrl_.vhd
 l0
 L5
 VZJDMe;miolzzPLiUzgnCU3
 !s100 bUWS4>a]^Pj3iF1T`D^Yn1
-R5
+R4
 32
-R6
+R5
 !i10b 1
-R7
+R6
 !s90 -reportprogress|300|../vhdl/calc_ctrl_.vhd|
 !s107 ../vhdl/calc_ctrl_.vhd|
 !i113 1
-R8
+R7
 Ecalc_top
-w1507543268
+Z8 w1509962065
 R1
 R2
 R3
-R4
+R0
 8../vhdl/cal_top_.vhd
 F../vhdl/cal_top_.vhd
 l0
-L5
-V4P`cEBKWOifMXa1I58T<A3
-!s100 iJ84dBOKMo?7V7nWi]jXL3
-R5
+L7
+VUEZ<SOiQGm_?;NG0f=3N`0
+!s100 XmNH<n];>5OJZ6XacSFDl1
+R4
 32
-R6
+R5
 !i10b 1
-R7
+R6
 !s90 -reportprogress|300|../vhdl/cal_top_.vhd|
 !s107 ../vhdl/cal_top_.vhd|
 !i113 1
-R8
+R7
 Astruc
-w1509957673
-DEx4 work 8 calc_top 0 22 4P`cEBKWOifMXa1I58T<A3
+DEx4 work 8 calc_top 0 22 UEZ<SOiQGm_?;NG0f=3N`0
 R1
 R2
 R3
@@ -83,265 +82,93 @@ l87
 L5
 V8fanJkQ32ECASkMER8`N`2
 !s100 CbbJ<9iehz><mKY[e_aMf2
-R5
+R4
 32
-!s110 1509957677
+R5
 !i10b 1
-R7
+R6
 !s90 -reportprogress|300|../vhdl/cal_top_struc.vhd|
 !s107 ../vhdl/cal_top_struc.vhd|
 !i113 1
-R8
+R7
 Eio_ctrl
 w1507543422
 R1
 R2
 R3
-R4
+R0
 8../vhdl/io_ctrl_.vhd
 F../vhdl/io_ctrl_.vhd
 l0
 L5
 V4bFR?R[mh7QDkmHkC@1Zo1
 !s100 nV<iCg@YG9ShD[R`>oJG;3
-R5
+R4
 32
-R6
+Z9 !s110 1510070317
 !i10b 1
-R7
+Z10 !s108 1510070317.000000
 !s90 -reportprogress|300|../vhdl/io_ctrl_.vhd|
 !s107 ../vhdl/io_ctrl_.vhd|
 !i113 1
-R8
-Enbitadder
-Z9 w1506934930
+R7
+Artl
+w1510070307
+DEx4 work 7 io_ctrl 0 22 4bFR?R[mh7QDkmHkC@1Zo1
 R1
 R2
 R3
-Z10 dC:/Users/Paul/Desktop/Technikum/3_Semester/DSE/nbitadder/msim
-Z11 8../vhdl/nbitadder.vhd
-Z12 F../vhdl/nbitadder.vhd
+8../vhdl/io_ctrl_rtl.vhd
+F../vhdl/io_ctrl_rtl.vhd
+l8
+L5
+V>LG[GOmDA[zJiz2DnEhbn1
+!s100 64CN01RSjH?:Dd5NS?09Q1
+R4
+32
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|../vhdl/io_ctrl_rtl.vhd|
+!s107 ../vhdl/io_ctrl_rtl.vhd|
+!i113 1
+R7
+Etb_io_ctrl
+Z11 w1510070005
+R1
+R2
+R3
+R0
+Z12 8../tb/tb_io_ctrl.vhd
+Z13 F../tb/tb_io_ctrl.vhd
 l0
 L5
-VQG4MYP6d4Oh>SN=d`oQC>0
-!s100 ImeJibfdEhF?gU4ODQG:Y1
-R5
+VN55VoU9djM:0<H7ggnkbc3
+!s100 :W[E<8DTGDnig?TX_:H>X1
+R4
 32
-Z13 !s110 1506934935
+R5
 !i10b 1
-Z14 !s108 1506934935.000000
-Z15 !s90 -reportprogress|300|../vhdl/nbitadder.vhd|
-Z16 !s107 ../vhdl/nbitadder.vhd|
+R6
+Z14 !s90 -reportprogress|300|../tb/tb_io_ctrl.vhd|
+Z15 !s107 ../tb/tb_io_ctrl.vhd|
 !i113 1
-R8
-Artl
+R7
+Asim
 R1
 R2
 R3
-DEx4 work 9 nbitadder 0 22 QG4MYP6d4Oh>SN=d`oQC>0
-l19
-L17
-VTgRh^WTgK<n`lN;BOS@B71
-!s100 6b=XK8GA;j`cLS:[P[8H;0
-R5
+Z16 DEx4 work 10 tb_io_ctrl 0 22 N55VoU9djM:0<H7ggnkbc3
+l46
+L9
+Z17 VULc74WaeS=b?eF[NCklNa3
+Z18 !s100 z]7Zl>fODG?]6jCi?C:0c2
+R4
 32
-R13
+R5
 !i10b 1
+R6
 R14
 R15
-R16
 !i113 1
-R8
-Eshiftregister
-Z17 w1507536444
-R1
-R2
-R3
-Z18 dC:/Users/Paul/Desktop/Technikum/3_Semester/DSE/shiftregister/msim
-Z19 8../vhdl/shiftregister.vhd
-Z20 F../vhdl/shiftregister.vhd
-l0
-L5
-VeDADf@EgNFJL1GVQAcSE51
-!s100 N=JX@9ObzN9L>aJN=MG@:0
-R5
-32
-Z21 !s110 1507536617
-!i10b 1
-Z22 !s108 1507536617.000000
-Z23 !s90 -reportprogress|300|../vhdl/shiftregister.vhd|
-Z24 !s107 ../vhdl/shiftregister.vhd|
-!i113 1
-R8
-Artl
-R1
-R2
-R3
-DEx4 work 13 shiftregister 0 22 eDADf@EgNFJL1GVQAcSE51
-l21
-L19
-V7L@jd4TkM:9FTZDRgaYf50
-!s100 W9SzT[LA?1Gml1IYW02na2
-R5
-32
-R21
-!i10b 1
-R22
-R23
-R24
-!i113 1
-R8
-Etb_nbitadder
-Z25 w1506932859
-R1
-R2
-R3
-R10
-Z26 8../tb/tb_nbitadder.vhd
-Z27 F../tb/tb_nbitadder.vhd
-l0
-L6
-V5HIo0AkGK[j=e7NBf:OBC0
-!s100 mE>Mi;T>Cnj@B`jHUUZnS3
-R5
-32
-Z28 !s110 1506932860
-!i10b 1
-Z29 !s108 1506932860.000000
-Z30 !s90 -reportprogress|300|../tb/tb_nbitadder.vhd|
-Z31 !s107 ../tb/tb_nbitadder.vhd|
-!i113 1
-R8
-Asim
-R1
-R2
-R3
-DEx4 work 12 tb_nbitadder 0 22 5HIo0AkGK[j=e7NBf:OBC0
-l28
-L9
-V?LQQjL7ecoDoOAgk5m`ij2
-!s100 W0e9oJmdmU4ha5bzDXMAC1
-R5
-32
-R28
-!i10b 1
-R29
-R30
-R31
-!i113 1
-R8
-Etb_vectorgates
-Z32 w1505669641
-R1
-R2
-R3
-R0
-Z33 8../tb/tb_vectorgates.vhd
-Z34 F../tb/tb_vectorgates.vhd
-l0
-L6
-V4T0z8Yzj@cHkbNo0KMGKc3
-!s100 @^e_G`jm?6Kc_30oc=TEF3
-R5
-32
-Z35 !s110 1505669649
-!i10b 1
-Z36 !s108 1505669649.000000
-Z37 !s90 -reportprogress|300|../tb/tb_vectorgates.vhd|
-Z38 !s107 ../tb/tb_vectorgates.vhd|
-!i113 1
-R8
-Asim
-R1
-R2
-R3
-DEx4 work 14 tb_vectorgates 0 22 4T0z8Yzj@cHkbNo0KMGKc3
-l30
-L9
-VG_H9DhmX2Ab4M[5[=eZ9P2
-!s100 P50i8F72dj6>BPPQSIKn12
-R5
-32
-R35
-!i10b 1
-R36
-R37
-R38
-!i113 1
-R8
-Etestbench
-Z39 w1507536613
-R1
-R2
-R3
-R18
-Z40 8../tb/testbench.vhd
-Z41 F../tb/testbench.vhd
-l0
-L5
-VC`HKYb0fcefYQD39;JTZN1
-!s100 VmVOm[Z:PA5RR1AXLNnLd3
-R5
-32
-Z42 !s110 1507536618
-!i10b 1
-Z43 !s108 1507536618.000000
-Z44 !s90 -reportprogress|300|../tb/testbench.vhd|
-Z45 !s107 ../tb/testbench.vhd|
-!i113 1
-R8
-Asim
-R1
-R2
-R3
-DEx4 work 9 testbench 0 22 C`HKYb0fcefYQD39;JTZN1
-l30
-L11
-VUC2V2lJ?hTZjXHII9a@m20
-!s100 LnGhTUj>DHdzz[_Y7Mn2W2
-R5
-32
-R42
-!i10b 1
-R43
-R44
-R45
-!i113 1
-R8
-Evectorgates
-Z46 w1505669164
-R2
-R3
-R0
-Z47 8../vhdl/vectorgates_mod.vhd
-Z48 F../vhdl/vectorgates_mod.vhd
-l0
-L4
-VO:EcebEb;SLkZ7E=AKA[H1
-!s100 >LJioO9bHH4>IPX4BPRh61
-R5
-32
-R35
-!i10b 1
-Z49 !s108 1505669648.000000
-Z50 !s90 -reportprogress|300|../vhdl/vectorgates_mod.vhd|
-Z51 !s107 ../vhdl/vectorgates_mod.vhd|
-!i113 1
-R8
-Artl
-R2
-R3
-DEx4 work 11 vectorgates 0 22 O:EcebEb;SLkZ7E=AKA[H1
-l17
-L16
-VOT72`ZARl3NC2S`Ec`7cn3
-!s100 _T`QG33^5eaX7HZCTAd?m3
-R5
-32
-R35
-!i10b 1
-R49
-R50
-R51
-!i113 1
-R8
+R7

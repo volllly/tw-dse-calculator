@@ -1,4 +1,4 @@
-vsim -t ns -novopt -lib work work.testbench 
+vsim -t ns -novopt -lib work work.tb_io_ctrl 
 view *
 do testbench_wave.do
-run 220 ns
+run 1000000 ns
