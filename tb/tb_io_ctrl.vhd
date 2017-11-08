@@ -74,7 +74,7 @@ architecture sim of tb_io_ctrl is
         p_ss: process
             begin
                 reset_i <= '1';
-                wait for 40 ns;
+                wait for 5 ns;
                 reset_i <= '0';
                 dig0_i <= x"00";
                 dig1_i <= x"00";
@@ -92,7 +92,7 @@ architecture sim of tb_io_ctrl is
                 dig3_i <= x"F3";
                 wait for 3 ns;
                 dig3_i <= x"55";
-                wait for 3000 ns;
+                wait for 2000 ns;
 
                 assert false report "SIMMULATION_END" severity failure;
         end process;
@@ -113,5 +113,15 @@ architecture sim of tb_io_ctrl is
                 wait for 7 ns;
                 led_i <= "0000000000000000";
                 wait for 7 ns;
-            end process;
+        end process;
+
+        p_i: process
+            begin
+                sw_i <= x"0105";
+                pb_i <= x"2";
+                wait for 500 ns;
+                sw_i <= x"1410";
+                pb_i <= x"0";
+                wait for 500 ns;
+        end process;
 end sim;

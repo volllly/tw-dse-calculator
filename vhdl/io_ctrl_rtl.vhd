@@ -22,6 +22,9 @@ architecture rtl of io_ctrl is
                             else
                                 s_int_clk <= '1';
                             end if;
+                            if v_ss_f >= c_ss_f then
+                                v_ss_f := 0;
+                            end if;
                         end if;
                 end process p_int_clk;
         end block b_int_clk;
@@ -31,9 +34,9 @@ architecture rtl of io_ctrl is
             p_ss_sel: process(reset_i, s_int_clk)
                 begin
                     if reset_i = '1' then
-                        s_ss_sel_o <= "0001";
+                        s_ss_sel_o <= "1000";
                     elsif s_int_clk = '1' and s_int_clk'event then
-                        s_ss_sel_o <= s_ss_sel_o(1 downto 0)&s_ss_sel_o(3 downto 1);
+                        s_ss_sel_o <= s_ss_sel_o(0)&s_ss_sel_o(3 downto 1);
                     end if;
             end process p_ss_sel;
 
@@ -61,7 +64,7 @@ architecture rtl of io_ctrl is
                     begin
                         if reset_i = '1' then
                             s_swsync_db <= (others => '0');
-                            s_swsync <= (others => '0');
+                            swsync_o <= (others => '0');
                         elsif s_int_clk = '1' and s_int_clk'event then
                             s_swsync_db <= sw_i;
                             swsync_o <= sw_i and s_swsync_db;
@@ -72,7 +75,7 @@ architecture rtl of io_ctrl is
                 begin
                     if reset_i = '1' then
                         s_pbsync_db <= (others => '0');
-                        s_pbsync <= (others => '0');
+                        pbsync_o <= (others => '0');
                     elsif s_int_clk = '1' and s_int_clk'event then
                         s_pbsync_db <= pb_i;
                         pbsync_o <= pb_i and s_pbsync_db;
