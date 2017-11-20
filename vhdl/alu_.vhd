@@ -13,7 +13,7 @@ entity alu is
 
         finished_o: out std_logic;
         result_o:   out std_logic_vector(15 downto 0);
-        sign_0:     out std_logic;
+        sign_o:     out std_logic;
         overflow_o: out std_logic;
         error_o:    out std_logic
     );
