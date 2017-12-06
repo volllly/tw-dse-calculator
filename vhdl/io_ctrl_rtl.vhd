@@ -40,11 +40,11 @@ architecture rtl of io_ctrl is
 
             ss_sel_o <= s_ss_sel_o;
             with s_ss_sel_o select ss_o <= 
-                dig0_i when "0001",
-                dig1_i when "0010",
-                dig2_i when "0100",
-                dig3_i when "1000",
-                (others => '0') when others;
+                dig0_i when "1110",
+                dig1_i when "1101",
+                dig2_i when "1011",
+                dig3_i when "0111",
+                (others => '1') when others;
         end block b_ss;
 
         b_led: block
