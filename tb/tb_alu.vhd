@@ -57,9 +57,9 @@ architecture sim of tb_alu is
         p_clk: process
             begin
                 clk_i <= '0';
-                wait for 2 ns;
+                wait for 5 ns;
                 clk_i <= '1';
-                wait for 2 ns;
+                wait for 5 ns;
         end process;
 
         p_ss: process
@@ -74,4 +74,4 @@ architecture sim of tb_alu is
                 wait for 10 ns;
                 assert false report "SIMMULATION_END" severity failure;
         end process;
-end sim;
+end architecture;

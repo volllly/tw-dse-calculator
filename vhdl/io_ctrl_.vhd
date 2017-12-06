@@ -20,4 +20,4 @@ entity io_ctrl is
         swsync_o:   out std_logic_vector(15 downto 0);
         pbsync_o:   out std_logic_vector(3  downto 0)
     );
-end io_ctrl;
+end entity;

@@ -66,9 +66,9 @@ architecture sim of tb_io_ctrl is
         p_clk: process
             begin
                 clk_i <= '0';
-                wait for 1 ns;
+                wait for 5 ns;
                 clk_i <= '1';
-                wait for 1 ns;
+                wait for 5 ns;
         end process;
 
         p_ss: process
@@ -124,4 +124,4 @@ architecture sim of tb_io_ctrl is
                 pb_i <= x"0";
                 wait for 500 ns;
         end process;
-end sim;
+end architecture;

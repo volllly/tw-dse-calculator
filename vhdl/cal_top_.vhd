@@ -15,4 +15,4 @@ entity calc_top is
         ss_sel_o:   out std_logic_vector(3  downto 0);
         led_o:      out std_logic_vector(15 downto 0)
     );
-end calc_top;
+end entity;

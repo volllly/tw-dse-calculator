@@ -139,4 +139,4 @@ architecture struc of calc_top is
                 overflow_o  => s_overflow,
                 error_o     => s_error
             );
-end struc;
+end architecture;

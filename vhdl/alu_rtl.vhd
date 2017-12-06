@@ -4,4 +4,4 @@ use IEEE.numeric_std.all;
 
 architecture rtl of alu is
     begin
-end rtl;
+end architecture;

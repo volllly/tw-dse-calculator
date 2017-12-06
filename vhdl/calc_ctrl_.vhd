@@ -24,4 +24,4 @@ entity calc_ctrl is
         dig3_o:     out std_logic_vector(7  downto 0);
         led_o:      out std_logic_vector(15 downto 0)
     );
-end calc_ctrl;
+end entity;

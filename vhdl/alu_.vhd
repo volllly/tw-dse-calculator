@@ -17,4 +17,4 @@ entity alu is
         overflow_o: out std_logic;
         error_o:    out std_logic
     );
-end alu;
+end entity;
