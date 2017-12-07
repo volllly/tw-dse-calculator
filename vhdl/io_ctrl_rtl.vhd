@@ -32,7 +32,7 @@ architecture rtl of io_ctrl is
             p_ss_sel: process(reset_i, clk_i)
                 begin
                     if reset_i = '1' then
-                        s_ss_sel_o <= "1000";
+                        s_ss_sel_o <= "0111";
                     elsif s_int_clk_enable = '1' and clk_i = '1' and clk_i'event then
                         s_ss_sel_o <= s_ss_sel_o(0)&s_ss_sel_o(3 downto 1);
                     end if;

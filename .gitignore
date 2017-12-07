@@ -1,2 +1,4 @@
 msim/work
 msim/w*
+impl/*.cache
+impl/*.runs

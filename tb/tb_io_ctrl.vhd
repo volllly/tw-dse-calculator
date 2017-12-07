@@ -92,7 +92,7 @@ architecture sim of tb_io_ctrl is
                 dig3_i <= x"F3";
                 wait for 3 ns;
                 dig3_i <= x"55";
-                wait for 2000 ns;
+                wait for 200000 ns;
 
                 assert false report "SIMMULATION_END" severity failure;
         end process;

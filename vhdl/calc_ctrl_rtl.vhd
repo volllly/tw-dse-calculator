@@ -62,23 +62,23 @@ architecture rtl of calc_ctrl is
                 end if;
         end process;
 
-        identifier: process(clk_i, reset_i)
+        p_outputlogic: process(clk_i, reset_i)
             begin
                 if reset_i = '1' then
-                    op1_o <=    (others => '0');
-                    s_op1 <=    (others => '0');
-                    op2_o <=    (others => '0');
-                    s_op2 <=    (others => '0');
-                    otype_o <=  (others => '0');
-                    s_otype <=  (others => '0');
+                    op1_o       <= (others => '0');
+                    s_op1       <= (others => '0');
+                    op2_o       <= (others => '0');
+                    s_op2       <= (others => '0');
+                    otype_o     <= (others => '0');
+                    s_otype     <= (others => '0');
 
-                    start_o <=  '0';
+                    start_o     <= '0';
                     
-                    dig0_o <=   (others => '1');
-                    dig1_o <=   (others => '1');
-                    dig2_o <=   (others => '1');
-                    dig3_o <=   (others => '1');
-                    led_o <=    (others => '0');
+                    dig0_o      <= (others => '1');
+                    dig1_o      <= (others => '1');
+                    dig2_o      <= (others => '1');
+                    dig3_o      <= (others => '1');
+                    led_o       <= (others => '0');
                 elsif clk_i = '1' and clk_i'event then
                     led_o <= x"0000";
                     case(s_state) is
@@ -126,19 +126,19 @@ architecture rtl of calc_ctrl is
                         when otype =>
                             dig3_o <= "11000100";
                             case(swsync_i(15 downto 12)) is
-                                when x"1" =>
+                                when x"1" => -- Sub
                                     dig2_o <= "01001001";
                                     dig1_o <= "11000111";
                                     dig0_o <= "11000001";
-                                when x"6" =>
+                                when x"6" => -- Sro
                                     dig2_o <= "01001001";
                                     dig1_o <= "11110101";
                                     dig0_o <= "11000101";
-                                when x"9" =>
+                                when x"9" => -- And
                                     dig2_o <= "00010001";
                                     dig1_o <= "11010101";
                                     dig0_o <= "10000101";
-                                when x"C" =>
+                                when x"C" => -- Rol
                                     dig2_o <= "11110101";
                                     dig1_o <= "11000101";
                                     dig0_o <= "11100011";
