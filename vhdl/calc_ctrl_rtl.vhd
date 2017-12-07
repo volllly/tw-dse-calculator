@@ -70,7 +70,7 @@ architecture rtl of calc_ctrl is
                     op2_o       <= (others => '0');
                     s_op2       <= (others => '0');
                     otype_o     <= (others => '0');
-                    s_otype     <= (others => '0');
+                    s_otype     <= x"1";
 
                     start_o     <= '0';
                     
@@ -92,7 +92,7 @@ architecture rtl of calc_ctrl is
                             led_o <= x"8000";
 
                             if error_i = '1' then
-                                dig3_o <= (others => '0');
+                                dig3_o <= (others => '1');
                                 dig2_o <= "01100001";
                                 dig1_o <= "11110101";
                                 dig0_o <= "11110101";
