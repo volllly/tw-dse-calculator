@@ -36,6 +36,7 @@ architecture rtl of alu is
     p_outputlogic: process(clk_i, reset_i)
         variable v_result:  integer range 0 to 2**16;
         variable v_op1:     integer range -2**12 to 2**12;
+        variable v_op2:     integer range -2**12 to 2**12;
         begin
             if reset_i = '1' then
                 s_finished  <= '0';
@@ -50,10 +51,13 @@ architecture rtl of alu is
                     when calculate =>
                         s_overflow <= '0';
                         s_error <= '0';
-                        s_sign <= '0';
+                        s_sign  <= '0';
                         case(otype_i) is
+                            when x"2" => -- X  
+                                v_op2    := 1;
+                                v_result := to_integer(unsigned(op1_i));
                             when x"6" => -- Sro
-                                v_op1 := to_integer(unsigned(op1_i));
+                                v_op1    := to_integer(unsigned(op1_i));
                                 v_result := 1;
                             when others =>
                         end case;                            
@@ -64,13 +68,20 @@ architecture rtl of alu is
                             case(otype_i) is
                                 when x"1" => -- Sub
                                     if unsigned(op1_i) >= unsigned(op2_i) then
-                                        s_sign <= '0';
+                                        s_sign   <= '0';
                                         s_result <= x"0"&std_logic_vector(unsigned(op1_i) - unsigned(op2_i));
                                     else
-                                        s_sign <= '1';
+                                        s_sign   <= '1';
                                         s_result <= x"0"&std_logic_vector(unsigned(op2_i) - unsigned(op1_i));
                                     end if;
                                     s_finished <= '1';
+                                when x"2" => -- X  
+                                    if v_op2 < to_integer(unsigned(op2_i)) then
+                                        v_result := v_result + to_integer(unsigned(op1_i));
+                                        v_op2    := v_op2 + 1;
+                                    else
+                                        s_finished <= '1';
+                                    end if;
                                 when x"6" => -- Sro
                                     if v_op1 >= 0 then
                                         v_op1 := v_op1 - v_result;
@@ -82,8 +93,7 @@ architecture rtl of alu is
                                 when x"9" => -- And
                                     s_result <= x"0"&(op1_i and op2_i);
                                     s_finished <= '1';
-                                when x"C" => -- Rol
-                                    s_result <= x"0"&op1_i(10 downto 0)&op1_i(11);
+                                when x"C" => -- roL                                    s_result <= x"0"&op1_i(10 downto 0)&op1_i(11);
                                     s_finished <= '1';
                                 when others =>
                                     s_error <= '1';
