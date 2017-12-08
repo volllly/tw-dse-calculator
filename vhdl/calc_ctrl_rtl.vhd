@@ -50,10 +50,10 @@ architecture rtl of calc_ctrl is
                             end if;
                         when display | op1 | op2 | otype =>
                             case(pbsync_i) is                            
-                                when "1000" => s_state <= op1;
-                                when "0100" => s_state <= op2;
-                                when "0010" => s_state <= otype;
-                                when "0001" => s_state <= calculate;
+                                when "0001" => s_state <= op1;
+                                when "0010" => s_state <= op2;
+                                when "0100" => s_state <= otype;
+                                when "1000" => s_state <= calculate;
                                 when others =>
                             end case;
                         when others =>

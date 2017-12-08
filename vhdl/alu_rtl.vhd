@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 architecture rtl of alu is
-    type t_state is (idle, calculating);
+    type t_state is (idle, calculate, calculating);
 
     signal s_state:     t_state;
     signal s_finished:  std_logic;
@@ -20,8 +20,9 @@ architecture rtl of alu is
                 case(s_state) is
                     when idle => 
                         if start_i = '1' then
-                            s_state <= calculating;
+                            s_state <= calculate;
                         end if;
+                    when calculate => s_state <= calculating;
                     when calculating =>
                         if s_finished = '1' then
                             s_state <= idle;
@@ -33,6 +34,8 @@ architecture rtl of alu is
     end process;
 
     p_outputlogic: process(clk_i, reset_i)
+        variable v_result:  integer range 0 to 2**16;
+        variable v_op1:     integer range -2**12 to 2**12;
         begin
             if reset_i = '1' then
                 s_finished  <= '0';
@@ -44,13 +47,20 @@ architecture rtl of alu is
                 case(s_state) is
                     when idle =>
                         s_finished <= '0';
+                    when calculate =>
+                        s_overflow <= '0';
+                        s_error <= '0';
+                        s_sign <= '0';
+                        case(otype_i) is
+                            when x"6" => -- Sro
+                                v_op1 := to_integer(unsigned(op1_i));
+                                v_result := 1;
+                            when others =>
+                        end case;                            
                     when calculating =>
                         if s_finished = '1' then
                             s_finished <= '0';
                         else
-                            s_overflow <= '0';
-                            s_error <= '0';
-                            s_sign <= '0';
                             case(otype_i) is
                                 when x"1" => -- Sub
                                     if unsigned(op1_i) >= unsigned(op2_i) then
@@ -62,7 +72,13 @@ architecture rtl of alu is
                                     end if;
                                     s_finished <= '1';
                                 when x"6" => -- Sro
-                                    s_finished <= '1';
+                                    if v_op1 >= 0 then
+                                        v_op1 := v_op1 - v_result;
+                                        v_result := v_result + 2;
+                                    else
+                                        s_result <= std_logic_vector(to_unsigned((v_result - 3) / 2, s_result'length));
+                                        s_finished <= '1';
+                                    end if;
                                 when x"9" => -- And
                                     s_result <= x"0"&(op1_i and op2_i);
                                     s_finished <= '1';
