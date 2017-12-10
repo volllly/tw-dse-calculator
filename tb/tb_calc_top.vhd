@@ -2,12 +2,12 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity tb_cal_top is
+entity tb_calc_top is
 
-end tb_cal_top;
+end tb_calc_top;
 
-architecture sim of tb_cal_top is
-    component cal_top
+architecture sim of tb_calc_top is
+    component calc_top
         port(
             clk_i:    in  std_logic;
             reset_i:  in  std_logic;
@@ -30,17 +30,17 @@ architecture sim of tb_cal_top is
     signal led_o:    std_logic_vector(15 downto 0);
 
     begin
-        i_cal_top: cal_top
-        port map(
-            clk_i    => clk_i,
-            reset_i  => reset_i,
-            sw_i     => sw_i,
-            pb_i     => pb_i,
+        i_calc_top: calc_top
+            port map(
+                clk_i    => clk_i,
+                reset_i  => reset_i,
+                sw_i     => sw_i,
+                pb_i     => pb_i,
 
-            ss_o     => ss_o,
-            ss_sel_o => ss_sel_o,
-            led_o    => led_o
-        );
+                ss_o     => ss_o,
+                ss_sel_o => ss_sel_o,
+                led_o    => led_o
+            );
         
         p_clk: process
             begin
@@ -60,15 +60,17 @@ architecture sim of tb_cal_top is
                 wait for 40 ns;
                 pb_i <= x"1";
                 sw_i <= x"089A";
-                wait for 10 ms;
+                wait for 6 ms;
                 pb_i <= x"2";
                 sw_i <= x"0B65";
-                wait for 10 ms;
+                wait for 6 ms;
                 pb_i <= x"4";
                 sw_i <= x"1000";
-                wait for 10 ms;
+                wait for 6 ms;
                 pb_i <= x"8";
-                wait for 20 ms;
+                wait for 6 ms;
+                pb_i <= x"0";
+                wait for 10 ms;
                 assert false report "SIMMULATION_END" severity failure;
         end process;
 end architecture;

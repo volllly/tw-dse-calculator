@@ -45,23 +45,23 @@ architecture sim of tb_io_ctrl is
 
     begin
         i_io_ctrl: io_ctrl
-        port map(
-            clk_i       => clk_i,
-            reset_i     => reset_i,
-            dig0_i      => dig0_i,
-            dig1_i      => dig1_i,
-            dig2_i      => dig2_i,
-            dig3_i      => dig3_i,
-            led_i       => led_i,
-            sw_i        => sw_i,
-            pb_i        => pb_i,
+            port map(
+                clk_i       => clk_i,
+                reset_i     => reset_i,
+                dig0_i      => dig0_i,
+                dig1_i      => dig1_i,
+                dig2_i      => dig2_i,
+                dig3_i      => dig3_i,
+                led_i       => led_i,
+                sw_i        => sw_i,
+                pb_i        => pb_i,
 
-            ss_o        => ss_o,
-            ss_sel_o    => ss_sel_o,
-            led_o       => led_o,
-            swsync_o    => swsync_o,
-            pbsync_o    => pbsync_o
-        );
+                ss_o        => ss_o,
+                ss_sel_o    => ss_sel_o,
+                led_o       => led_o,
+                swsync_o    => swsync_o,
+                pbsync_o    => pbsync_o
+            );
         
         p_clk: process
             begin

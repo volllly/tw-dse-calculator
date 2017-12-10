@@ -53,27 +53,27 @@ architecture sim of tb_calc_ctrl is
 
     begin
         i_calc_ctrl: calc_ctrl
-        port map(
-            clk_i       => clk_i,
-            reset_i     => reset_i,
-            swsync_i    => swsync_i,
-            pbsync_i    => pbsync_i,
-            finished_i  => finished_i,
-            result_i    => result_i,
-            sign_i      => sign_i,
-            overflow_i  => overflow_i,
-            error_i     => error_i,
-            
-            op1_o       => op1_o,
-            op2_o       => op2_o,
-            otype_o     => otype_o,
-            start_o     => start_o,
-            dig0_o      => dig0_o,
-            dig1_o      => dig1_o,
-            dig2_o      => dig2_o,
-            dig3_o      => dig3_o,
-            led_o       => led_o
-        );
+            port map(
+                clk_i       => clk_i,
+                reset_i     => reset_i,
+                swsync_i    => swsync_i,
+                pbsync_i    => pbsync_i,
+                finished_i  => finished_i,
+                result_i    => result_i,
+                sign_i      => sign_i,
+                overflow_i  => overflow_i,
+                error_i     => error_i,
+                
+                op1_o       => op1_o,
+                op2_o       => op2_o,
+                otype_o     => otype_o,
+                start_o     => start_o,
+                dig0_o      => dig0_o,
+                dig1_o      => dig1_o,
+                dig2_o      => dig2_o,
+                dig3_o      => dig3_o,
+                led_o       => led_o
+            );
         
         p_clk: process
             begin
@@ -124,7 +124,7 @@ architecture sim of tb_calc_ctrl is
                 finished_i <= '1';
                 wait for 10 ns;
                 finished_i <= '0';
-                wait for 20 ns;
+                wait for 1200 ns;
                 pbsync_i <= "0001";
                 wait for 30 ns;
                 sign_i <= '1';

@@ -48,7 +48,14 @@ architecture rtl of calc_ctrl is
                             if finished_i = '1' then
                                 s_state <= display;
                             end if;
-                        when display | op1 | op2 | otype =>
+                        when display =>
+                            case(pbsync_i) is                            
+                                when "0001" => s_state <= op1;
+                                when "0010" => s_state <= op2;
+                                when "0100" => s_state <= otype;
+                                when others =>
+                            end case;
+                        when op1 | op2 | otype =>
                             case(pbsync_i) is                            
                                 when "0001" => s_state <= op1;
                                 when "0010" => s_state <= op2;
