@@ -10,3 +10,4 @@ vcom ../vhdl/cal_top_struc.vhd
 vcom ../tb/tb_io_ctrl.vhd
 vcom ../tb/tb_calc_ctrl.vhd
 vcom ../tb/tb_alu.vhd
+vcom ../tb/tb_cal_top.vhd
