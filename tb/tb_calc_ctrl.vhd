@@ -63,6 +63,7 @@ architecture sim of tb_calc_ctrl is
             sign_i      => sign_i,
             overflow_i  => overflow_i,
             error_i     => error_i,
+            
             op1_o       => op1_o,
             op2_o       => op2_o,
             otype_o     => otype_o,

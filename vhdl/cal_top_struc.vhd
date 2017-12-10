@@ -18,7 +18,7 @@ architecture struc of calc_top is
         ss_o:       out std_logic_vector(7  downto 0);
         ss_sel_o:   out std_logic_vector(3  downto 0);
         led_o:      out std_logic_vector(15 downto 0);
-        swsync_o:    out std_logic_vector(15 downto 0);
+        swsync_o:   out std_logic_vector(15 downto 0);
         pbsync_o:   out std_logic_vector(3  downto 0)
     );
     end component;
@@ -27,7 +27,7 @@ architecture struc of calc_top is
         port(
             clk_i:      in  std_logic;
             reset_i:    in  std_logic;
-            swsync_i:    in  std_logic_vector(15 downto 0);
+            swsync_i:   in  std_logic_vector(15 downto 0);
             pbsync_i:   in  std_logic_vector(3  downto 0);
             finished_i: in  std_logic;
             result_i:   in  std_logic_vector(15 downto 0);

@@ -83,7 +83,7 @@ architecture rtl of calc_ctrl is
                     led_o <= x"0000";
                     case(s_state) is
                         when calculate =>
-                        start_o <= '1';
+                            start_o <= '1';
                             op1_o <= s_op1;
                             op2_o <= s_op2;
                             otype_o <= s_otype;
