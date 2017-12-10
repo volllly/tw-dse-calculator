@@ -23,6 +23,7 @@ add wave -noupdate -format Logic  -radix hexadecimal    /tb_calc_ctrl/op1_o
 add wave -noupdate -format Logic  -radix hexadecimal    /tb_calc_ctrl/op2_o
 add wave -noupdate -format Logic  -radix hexadecimal    /tb_calc_ctrl/otype_o
 add wave -noupdate -format Logic  -radix symbolic       /tb_calc_ctrl/i_calc_ctrl/s_state
+add wave -noupdate -format Logic  -radix binary         /tb_calc_ctrl/led_o
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {0 ps}
 WaveRestoreZoom {0 ps} {1 ns}

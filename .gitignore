@@ -1,4 +1,4 @@
-msim/work
-msim/w*
+msim/*
+!msim/*.do
 impl/*.cache
 impl/*.runs
