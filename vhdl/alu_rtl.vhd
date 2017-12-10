@@ -82,7 +82,8 @@ architecture rtl of alu is
                                 when x"9" => -- And
                                     s_result <= x"0"&(op1_i and op2_i);
                                     s_finished <= '1';
-                                when x"C" => -- roL                                    s_result <= x"0"&op1_i(10 downto 0)&op1_i(11);
+                                when x"C" => -- roL                                    
+                                    s_result <= x"0"&op1_i(10 downto 0)&op1_i(11);
                                     s_finished <= '1';
                                 when others =>
                                     s_error <= '1';
