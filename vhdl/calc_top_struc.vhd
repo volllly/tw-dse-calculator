@@ -64,6 +64,7 @@ architecture struc of calc_top is
         );
     end component;
 
+    -- define routing signals
     signal s_op1:       std_logic_vector(11 downto 0);
     signal s_op2:       std_logic_vector(11 downto 0);
     signal s_otype:     std_logic_vector(3  downto 0);
