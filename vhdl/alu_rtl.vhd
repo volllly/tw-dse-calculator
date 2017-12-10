@@ -36,7 +36,6 @@ architecture rtl of alu is
     p_outputlogic: process(clk_i, reset_i)
         variable v_result:  integer range 0 to 2**16;
         variable v_op1:     integer range -2**12 to 2**12;
-        variable v_op2:     integer range -2**12 to 2**12;
         begin
             if reset_i = '1' then
                 s_finished  <= '0';
@@ -53,9 +52,6 @@ architecture rtl of alu is
                         s_error <= '0';
                         s_sign  <= '0';
                         case(otype_i) is
-                            when x"2" => -- X  
-                                v_op2    := 1;
-                                v_result := to_integer(unsigned(op1_i));
                             when x"6" => -- Sro
                                 v_op1    := to_integer(unsigned(op1_i));
                                 v_result := 1;
@@ -75,13 +71,6 @@ architecture rtl of alu is
                                         s_result <= x"0"&std_logic_vector(unsigned(op2_i) - unsigned(op1_i));
                                     end if;
                                     s_finished <= '1';
-                                when x"2" => -- X  
-                                    if v_op2 < to_integer(unsigned(op2_i)) then
-                                        v_result := v_result + to_integer(unsigned(op1_i));
-                                        v_op2    := v_op2 + 1;
-                                    else
-                                        s_finished <= '1';
-                                    end if;
                                 when x"6" => -- Sro
                                     if v_op1 >= 0 then
                                         v_op1 := v_op1 - v_result;
